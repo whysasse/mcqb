@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            MCQB
+tagline:          'Processing e muito glitter!'
+description:      'Processing e muito glitter!'
+url:              http://whysasse.github.io/mcqb
+baseurl:          /
+
+author:
+  name:           'Ennio Franco & Fabio Sasseron'
+  url:            https://github.com/whysasse/mcqb
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/whysasse/mcqb
