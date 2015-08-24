@@ -10,7 +10,7 @@ relative_permalinks: true
 title:            MCQB
 tagline:          'Processing e muito glitter!'
 description:      'Processing e muito glitter!'
-url:              http://whysasse.github.io/mcqb
+url:              
 baseurl:          /
 
 author:
