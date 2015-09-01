@@ -13,7 +13,7 @@ void draw() {
   float sdZ = 10;
   float meanX = width/2;
   float meanY = height/2;
-  float meanZ = 20;
+  float meanZ = 10;
   
   float x = sdX * numX + meanX;
   float y = sdY * numY + meanY;
@@ -23,5 +23,5 @@ void draw() {
   
   noStroke();
   //fill(0, 10);
-  ellipse(x, y, z, z);
+  ellipse(x, y, 20, 20);
 }
