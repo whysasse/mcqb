@@ -4,22 +4,22 @@ float section;
 int index;
 
 void setup() {
-  size(640,240);
+  size(800,400);
   randomCounts = new int[50];
 }
 
 void draw() {
-  background(255);
+  background(220,220,220);
   float num = randomGaussian();
   float sd = 100;
-  float mean = 320;
+  float mean = width/2;
   float bell = sd * num + mean;
   // Pick a random number and increase the count.
   //int index = int(random(randomCounts.length));
   //randomCounts[index]++;
   
-  stroke(0);
-  fill(175);
+  noStroke();
+  fill(38,38,40);
   
   int w = width/randomCounts.length;
   
