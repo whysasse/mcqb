@@ -12,16 +12,19 @@ class Walker {
     x = width/2;
     y = height/2;
     sd = 2;
-    mean = 5;
+    mean = 10;
   }
   
   void display() {
-    noStroke();
+    stroke(38,38,40,50);
     fill(38,38,40,50);
-    ellipse(x,y,5,5);
+    //ellipse(x,y,5,5);
+    line(x,y,xStep,yStep);
   }
   
   void step() {
+    xStep = x;
+    yStep = y;
     num = randomGaussian();
     int choice = int(random(4));
     stepSize = sd * num + mean;
