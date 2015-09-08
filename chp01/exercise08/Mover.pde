@@ -19,12 +19,15 @@ class Mover {
     PVector mouse = new PVector(mouseX,mouseY);
     // Step 1: Compute direction
     PVector dir = PVector.sub(mouse,location);
-
+    
+    float magnitude = dir.mag();
+    println("mag = " + magnitude);
+    
     // Step 2: Normalize
     dir.normalize();
 
     // Step 3: Scale
-    dir.mult(0.5);
+    dir.mult(0.5 /magnitude);
 
     // Step 4: Accelerate
     acceleration = dir;
