@@ -4,22 +4,38 @@ float section;
 int index;
 
 void setup() {
+<<<<<<< Updated upstream
   size(800,400);
+=======
+  size(640,240);
+>>>>>>> Stashed changes
   randomCounts = new int[50];
 }
 
 void draw() {
+<<<<<<< Updated upstream
   background(220,220,220);
   float num = randomGaussian();
   float sd = 100;
   float mean = width/2;
+=======
+  background(255);
+  float num = randomGaussian();
+  float sd = 100;
+  float mean = 320;
+>>>>>>> Stashed changes
   float bell = sd * num + mean;
   // Pick a random number and increase the count.
   //int index = int(random(randomCounts.length));
   //randomCounts[index]++;
   
+<<<<<<< Updated upstream
   noStroke();
   fill(38,38,40);
+=======
+  stroke(0);
+  fill(175);
+>>>>>>> Stashed changes
   
   int w = width/randomCounts.length;
   
