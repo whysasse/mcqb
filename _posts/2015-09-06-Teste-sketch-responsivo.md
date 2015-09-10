@@ -11,5 +11,7 @@ Usaremos como ponto de partida o livro *[Nature of Code](http://natureofcode.com
 
 <canvas data-processing-sources="https://raw.githubusercontent.com/whysasse/mcqb/gh-pages/_posts/figure02.js"></canvas>
 
+![testando]({{ site.url }}/_posts/FullSizeRender.jpg)
+
 Se estiver curioso, [saiba quem somos](http://whysasse.github.io/about/).
 
