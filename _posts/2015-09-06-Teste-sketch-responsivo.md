@@ -9,9 +9,9 @@ title: Teste de sketch e responsividade
 ### Nosso caminho
 Usaremos como ponto de partida o livro *[Nature of Code](http://natureofcode.com)*. O autor, Daniel Shiffman, disponibiliza o [código](https://github.com/shiffman/The-Nature-of-Code-Examples) e os [vídeos](https://vimeo.com/channels/natureofcode) do livro.
 
-<canvas data-processing-sources="https://raw.githubusercontent.com/whysasse/mcqb/gh-pages/_posts/figure02.js"></canvas>
+<canvas data-processing-sources="/public/figure02.js"></canvas>
 
-![testando]({{ site.url }}/public/FullSizeRender.jpg)
+![testando](/public/FullSizeRender.jpg)
 
 Se estiver curioso, [saiba quem somos](http://whysasse.github.io/about/).
 
