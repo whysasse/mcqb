@@ -10,13 +10,11 @@ relative_permalinks: true
 title:            MCQB
 tagline:          'Processing e muito glitter!'
 description:      'Processing e muito glitter!'
-#url:             http://whysasse.github.io/mcqb
-#baseurl:          /
+#url:             http://whysasse.github.io
+baseurl:          /mcqb
 
-production_url:    http://whysasse.github.io/mcqb
-BASE_PATH:         http://whysasse.github.io/mcqb
-
-
+#production_url:    http://whysasse.github.io/mcqb
+#BASE_PATH:         http://whysasse.github.io/mcqb
 
 author:
   name:           'Ennio Franco & Fabio Sasseron'
