@@ -11,7 +11,6 @@ Usaremos como ponto de partida o livro *[Nature of Code](http://natureofcode.com
 
 <canvas data-processing-sources="/public/figure02.js"></canvas>
 
-![testando](/public/FullSizeRender.jpg)
+![testando]({{ site.baseurl }}public/FullSizeRender.jpg)
 
 Se estiver curioso, [saiba quem somos](http://whysasse.github.io/about/).
-
