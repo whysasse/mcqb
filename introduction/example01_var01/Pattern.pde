@@ -7,6 +7,7 @@ class Pattern {
   float stepSizeY;
   float stepSizeX_;
   float stepSizeY_;
+  int colorFlag = 1;
   
   Pattern() {
     //constructor
@@ -18,12 +19,16 @@ class Pattern {
   }
   
   void display() {
-    stroke(255,59,0,20);
+    if (colorFlag == 1) {
+      stroke(177,39,0,25);
+    } else {
+      stroke(255,195,0,25);
+    }
     if (loc.x == dest.x && loc.y == dest.y) {
       float prob = 0.005;
       float r = random(1);
       if (r < prob) {
-        stroke(255);
+        stroke(255,80);
       }
       ellipse(dest.x,dest.y,6,6);
     } else {
@@ -48,6 +53,8 @@ class Pattern {
     float prob = 0.0007;
     float r = random(1);
     if (r < prob) {
+      colorFlag *= -1;
+      //println("troquei cor");
       stepSizeX_ = stepSizeX/2;
       stepSizeY_ = stepSizeY/2;
     } else {
@@ -74,9 +81,7 @@ class Pattern {
       stepSizeX_ *= -1;
     } 
     if (choice != 0) {
-      //println("1. stepSizeX_ = " + (dest.x + stepSizeX_) + " stepSizeY_ = " + (dest.y + stepSizeY_));
       checkEdges();
-      //println("2. stepSizeX_ = " + (dest.x + stepSizeX_) + " stepSizeY_ = " + (dest.y + stepSizeY_));
       stepSize.set(stepSizeX_,stepSizeY_);
       dest.add(stepSize);
     }
