@@ -11,9 +11,9 @@ Walker w;
 void setup() {
   size(400, 400);
   smooth();
-  fill(255, 30);
+  fill(230, 30);
   noStroke();
-  background(0);
+  background(40);
   w = new Walker();
 }
 
