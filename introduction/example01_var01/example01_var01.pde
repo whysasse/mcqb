@@ -9,4 +9,10 @@ void setup() {
 void draw() {
   p.step();
   p.display();
+  if (keyPressed) {
+    if (key == ' ') {
+      //make a PNG
+      saveFrame("example01-var01-###.png");
+    }
+  }
 }
