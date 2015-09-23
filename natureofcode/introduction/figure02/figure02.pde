@@ -27,7 +27,7 @@ void draw() {
     int section = x * w;
     if (bell > section && bell < section + w) {
       index = x;
-      println("estou na secao " + x);
+      //println("estou na secao " + x);
     }
   }
   randomCounts[index]++;
