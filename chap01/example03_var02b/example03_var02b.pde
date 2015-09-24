@@ -7,11 +7,15 @@ Nature of Code - Chapter 1
  https://github.com/whysasse/mcqb
  */
 
-PVector [] mouses = new PVector[100];
-PVector [] positions = new PVector[100];
+//CHANGE HERE
+int escala = 20; // change size accordingly
+
+PVector [] mouses = new PVector[escala*escala];
+PVector [] positions = new PVector[escala*escala];
 
 void setup() {
-  size(180, 180);
+  // size = escala*escala-20
+  size(380, 380);
 }
 
 void draw() {
@@ -19,9 +23,9 @@ void draw() {
   background(160);
   //translate(200, 200);
 
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < escala; i++) {
     pushMatrix();
-    for (int j = 0; j < 10; j++) {
+    for (int j = 0; j < escala; j++) {
       mouses[i*j] = new PVector(mouseX, mouseY);
       positions[i*j] = new PVector(j*20, i*20);
       mouses[i*j].sub(positions[i*j]);
