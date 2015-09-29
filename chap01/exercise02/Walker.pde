@@ -1,18 +1,10 @@
 class Walker {
-
   PVector location;
-  //float x, y;
-
   PVector distance;
-  //int distx;
-  //int disty;
-
   //println(distx); //NAO FUNCIONA!!! ERRO VariableDeclaratorId
 
   Walker() {
     location = new PVector(width/2, height/2);
-    //x = width/2;
-    //y = height/2;
   }
 
   void step() {
@@ -25,49 +17,23 @@ class Walker {
   void render() {
     //int dia = variation(5);
     int dia = 3;
-    //println("dia = ", dia);
     ellipse(location.x, location.y, dia, dia);
-    //ellipse(x, y, dia, dia);
   }
-
-
 
   void passo() {
     checkPosition();
-
     float stepsize = montecarlo();
-
     PVector step = new PVector(random(-stepsize, stepsize), random(-stepsize, stepsize));
-    //float stepx = random(-stepsize, stepsize);
-    //float stepy = random(-stepsize, stepsize);
-
     location.add(step);
-    //x += stepx;
-    //y += stepy;
   }
 
   void pulo() {
     checkPosition();
-
     float stepsize = montecarlo();
-
     PVector step = new PVector(random(-stepsize, stepsize), random(-stepsize, stepsize));
-    //float stepx = random(-stepsize, stepsize);
-    //float stepy = random(-stepsize, stepsize);
-
     location.add(step);
-    //x += stepx;
-    //y += stepy;
-
     distance = new PVector(variation(60), variation(60));
-    //disty = variation(60);
-    //distx = variation(60);
-    //println("distx = ", distx);
-    //println("disty = ", disty);
-
     location.add(distance);
-    //x += stepx + distx;
-    //y += stepy + disty;
   }
 
   void checkPosition() {
