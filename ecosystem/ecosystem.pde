@@ -6,7 +6,7 @@
 Ennio ennio;
 
 void setup() {
-  size(640,360);
+  size(720,600);
   ennio = new Ennio(); 
 }
 
