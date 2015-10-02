@@ -3,17 +3,23 @@ class Ennio {
   PVector location;
   PVector velocity;
   PVector acceleration;
+  PVector attractor;
   float topspeed;
+  int changeRate;
   
   Ennio() {
+    //attractor = new PVector(random(
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
     topspeed = 8;
+    changeRate = 60;
   }
   
   void update() {
-   
+    if (frameCount % changeRate == 0) {
+      println("CU");
+    }
     PVector mouse = new PVector(mouseX,mouseY);
     PVector dir = PVector.sub(mouse,location);
     dir.normalize();
