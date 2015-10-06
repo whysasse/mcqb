@@ -4,6 +4,7 @@ class Ennio {
   PVector velocity;
   PVector acceleration;
   PVector attractor;
+  float accMag;
   float topspeed;
   int changeRate;
   
@@ -13,21 +14,20 @@ class Ennio {
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
     attractor = new PVector(random(0,width),random(0,height));
-    topspeed = 9;
-    changeRate = 70;
+    accMag = 0.9;
+    topspeed = 10;
+    changeRate = 200;
   }
   
   void update() {
     if (frameCount % changeRate == 0) {
       //the attractor attracts the being
       attractor.set(random(0,width),random(0,height));
+      println(frameCount);
     }
-    ellipse(attractor.x,attractor.y,4,4);
-    //PVector mouse = new PVector(mouseX,mouseY);
-    //PVector dir = PVector.sub(mouse,location);
+    //ellipse(attractor.x,attractor.y,4,4);
     PVector dir = PVector.sub(attractor,location);
-    dir.normalize();
-    dir.mult(0.5);
+    dir.setMag(accMag);
     acceleration = dir;
     
     velocity.add(acceleration);
@@ -40,6 +40,12 @@ class Ennio {
     noStroke();
     fill(175);
     ellipse(location.x, location.y, 16, 16);
+    
+    //pushMatrix();
+    //translate(location.x,location.y);
+    //stroke(0);
+    //line(0,0,acceleration.x*50,acceleration.y*50);
+    //popMatrix();
   }
   
   void checkEdges() {

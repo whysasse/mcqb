@@ -1,8 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
-// A Mover object
 Ennio ennio;
 
 void setup() {
@@ -13,8 +8,6 @@ void setup() {
 void draw() {
   background(255);
   
-  // Update the location
   ennio.update();
-  // Display the Mover
   ennio.display(); 
 }
