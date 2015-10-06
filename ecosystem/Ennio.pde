@@ -12,16 +12,20 @@ class Ennio {
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
-    topspeed = 8;
-    changeRate = 60;
+    attractor = new PVector(random(0,width),random(0,height));
+    topspeed = 9;
+    changeRate = 70;
   }
   
   void update() {
     if (frameCount % changeRate == 0) {
-      println("CU");
+      //the attractor attracts the being
+      attractor.set(random(0,width),random(0,height));
     }
-    PVector mouse = new PVector(mouseX,mouseY);
-    PVector dir = PVector.sub(mouse,location);
+    ellipse(attractor.x,attractor.y,4,4);
+    //PVector mouse = new PVector(mouseX,mouseY);
+    //PVector dir = PVector.sub(mouse,location);
+    PVector dir = PVector.sub(attractor,location);
     dir.normalize();
     dir.mult(0.5);
     acceleration = dir;
