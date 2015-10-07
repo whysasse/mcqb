@@ -6,7 +6,8 @@ MCQB Ecosystem
  https://github.com/whysasse/mcqb
  */
 
-// A Mover object
+Ennio ennio;
+
 Dragqueen sheyla;
 
 int isAttacking;
@@ -14,14 +15,18 @@ int isAttacking;
 void setup() {
   size(720, 480);
   smooth();
-
+  ennio = new Ennio();
   sheyla = new Dragqueen();
-  
+
   isAttacking = 0;
 }
 
 void draw() {
+  //background(255);
   background(50);
+
+  ennio.update();
+  ennio.display(); 
 
   // Drag queen
   sheyla.update();
@@ -29,8 +34,8 @@ void draw() {
 }
 
 void mousePressed() {
- isAttacking = 1;
- //sheyla.attack();
+  isAttacking = 1;
+  //sheyla.attack();
 }
 
 void mouseReleased() {
