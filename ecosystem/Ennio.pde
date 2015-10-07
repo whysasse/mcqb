@@ -9,7 +9,6 @@ class Ennio {
   int changeRate;
   
   Ennio() {
-    //attractor = new PVector(random(
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
@@ -23,7 +22,7 @@ class Ennio {
     if (frameCount % changeRate == 0) {
       //the attractor attracts the being
       attractor.set(random(0,width),random(0,height));
-      println(frameCount);
+      //println(frameCount);
     }
     //ellipse(attractor.x,attractor.y,4,4);
     PVector dir = PVector.sub(attractor,location);
@@ -40,12 +39,6 @@ class Ennio {
     noStroke();
     fill(175);
     ellipse(location.x, location.y, 16, 16);
-    
-    //pushMatrix();
-    //translate(location.x,location.y);
-    //stroke(0);
-    //line(0,0,acceleration.x*50,acceleration.y*50);
-    //popMatrix();
   }
   
   void checkEdges() {
