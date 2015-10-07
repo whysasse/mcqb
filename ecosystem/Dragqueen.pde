@@ -1,3 +1,12 @@
+/*
+MCQB Ecosystem
+ Based on the book Nature of Code, by Daniel Shiffman
+ 
+ Creates a circle that giggles around, surrounded by a swarm of glitter. 
+ 
+ Authors: Ennio Franco and Fabio Sasseron
+ https://github.com/whysasse/mcqb
+ */
 
 class Dragqueen {
 
@@ -43,9 +52,9 @@ class Dragqueen {
   }
 
   void attack() {
-    for (int i = 0; i < nuvem.length; i++) {
-      nuvem[i].update(mouseX, mouseY);
-      nuvem[i].display();
+    for (Glitter n : nuvem) {
+      n.update(mouseX, mouseY);
+      n.display();
     }
   }
 }

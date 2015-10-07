@@ -1,4 +1,13 @@
-
+/*
+MCQB Ecosystem
+ Based on the book Nature of Code, by Daniel Shiffman
+ 
+ Creates a little transparent circle that is drawn to a given location
+ 
+ Authors: Ennio Franco and Fabio Sasseron
+ https://github.com/whysasse/mcqb
+ */
+ 
 class Glitter {
 
   PVector location;
