@@ -1,20 +1,25 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+/*
+MCQB Ecosystem
+ Based on the book Nature of Code, by Daniel Shiffman
+ 
+ Authors: Ennio Franco and Fabio Sasseron
+ https://github.com/whysasse/mcqb
+ */
 
 // A Mover object
-Ennio ennio;
+Dragqueen sheyla;
 
 void setup() {
-  size(640,360);
-  ennio = new Ennio(); 
+  size(720, 480);
+  smooth();
+  
+  sheyla = new Dragqueen();
 }
 
 void draw() {
-  background(255);
-  
-  // Update the location
-  ennio.update();
-  // Display the Mover
-  ennio.display(); 
+  background(50);
+
+  // Drag queen
+  sheyla.update();
+  sheyla.display();
 }
