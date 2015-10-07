@@ -6,7 +6,7 @@ MCQB Ecosystem
  https://github.com/whysasse/mcqb
  */
 
-Ennio ennio;
+Druggy druggy;
 
 Dragqueen sheyla;
 
@@ -15,7 +15,7 @@ int isAttacking;
 void setup() {
   size(720, 480);
   smooth();
-  ennio = new Ennio();
+  druggy = new Druggy();
   sheyla = new Dragqueen();
 
   isAttacking = 0;
@@ -25,8 +25,8 @@ void draw() {
   //background(255);
   background(50);
 
-  ennio.update();
-  ennio.display(); 
+  druggy.update();
+  druggy.display(); 
 
   // Drag queen
   sheyla.update();

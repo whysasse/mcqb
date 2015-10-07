@@ -1,4 +1,4 @@
-class Ennio {
+class Druggy {
 
   PVector location;
   PVector velocity;
@@ -8,7 +8,7 @@ class Ennio {
   float topspeed;
   int changeRate;
   
-  Ennio() {
+  Druggy() {
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
