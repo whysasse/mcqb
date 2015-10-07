@@ -9,11 +9,15 @@ MCQB Ecosystem
 // A Mover object
 Dragqueen sheyla;
 
+int isAttacking;
+
 void setup() {
   size(720, 480);
   smooth();
-  
+
   sheyla = new Dragqueen();
+  
+  isAttacking = 0;
 }
 
 void draw() {
@@ -22,4 +26,13 @@ void draw() {
   // Drag queen
   sheyla.update();
   sheyla.display();
+}
+
+void mousePressed() {
+ isAttacking = 1;
+ //sheyla.attack();
+}
+
+void mouseReleased() {
+  isAttacking = 0;
 }

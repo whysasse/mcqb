@@ -24,16 +24,28 @@ class Dragqueen {
     location2.x += 0.003;
     location2.y += 0.003;
 
-    //chama glitter
-    for (int i = 0; i < nuvem.length; i++) {
-      nuvem[i].update(location.x, location.y);
-      nuvem[i].display();
+    // glitter
+
+    if (isAttacking == 0) {
+      for (int i = 0; i < nuvem.length; i++) {
+        nuvem[i].update(location.x, location.y);
+        nuvem[i].display();
+      }
+    } else {
+      attack();
     }
   }
 
   void display() {
     noStroke();
-    fill(196, 8, 255);
+    fill(196, 8, 255, 200);
     ellipse(location.x, location.y, 24, 24);
+  }
+
+  void attack() {
+    for (int i = 0; i < nuvem.length; i++) {
+      nuvem[i].update(mouseX, mouseY);
+      nuvem[i].display();
+    }
   }
 }
