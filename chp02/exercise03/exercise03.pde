@@ -1,11 +1,14 @@
 Mover[] movers;
+Fans fans;
+float n;
 
 void setup() {
   size (720, 600);
-  movers = new Mover[5];
+  movers = new Mover[10];
   for (int i = 0; i < movers.length; i++) {
     movers[i] = new Mover(random(1, 5), random(width), random(height));
   }
+  fans = new Fans();
 }
 
 void draw() {
@@ -16,8 +19,14 @@ void draw() {
     gravity.mult(m.mass);
     m.applyForce(gravity);
 
-    PVector wind = new PVector(-0.1, 0);
-    m.applyForce(wind);
+    if (mousePressed) {
+      PVector wind = new PVector(0.5, 0);
+      m.applyForce(wind);
+    }
+    
+    PVector force = new PVector(fans.calcWind(m.loc.x), 0);
+    m.applyForce(force);
+    //println(force);
 
     m.update();
     m.edges();
