@@ -4,7 +4,7 @@ float groundFricCoef;
 
 void setup() {
   size (720, 600);
-  movers = new Mover[1];
+  movers = new Mover[4];
   for (int i = 0; i < movers.length; i++) {
     movers[i] = new Mover(random(1, 5), random(width), 400);
   }
