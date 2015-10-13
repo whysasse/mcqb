@@ -5,7 +5,7 @@ void setup() {
   size (720, 600);
   movers = new Mover[1];
   reset();
-  sky = new Sky(0, 0, width, 400, 0.1);
+  sky = new Sky(0, 0, width, 400, 0.01);
 }
 
 void draw() {
@@ -22,6 +22,18 @@ void draw() {
     PVector gravity = new PVector(0, 0.1);
     gravity.mult(movers[i].mass);
     movers[i].applyForce(gravity);
+    
+    if (keyPressed) {
+      if (key == 'a' || key == 'A') {
+        PVector wind = new PVector(1, 0);
+        movers[i].applyForce(wind);
+      } else if (key == 's' || key == 'S') {
+        PVector wind = new PVector(2, 0);
+        PVector dragForceBellow = sky.dragBellow();
+        movers[i].applyForce(wind);
+        movers[i].applyForce(dragForceBellow);
+      }
+    }
     
     movers[i].update();
     movers[i].edges();

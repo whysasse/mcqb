@@ -2,6 +2,9 @@ class Sky {
   
   float x, y, w, h;
   float c; //coefficient of drag
+  PVector dragForce;
+  PVector dragForceAbove;
+  PVector dragForceBellow;
   
   Sky(float x_, float y_, float w_, float h_, float c_) {
     x = x_;
@@ -19,14 +22,22 @@ class Sky {
   PVector drag(Mover m) {
     float speed = m.vel.mag();
     float dragMagnitude = c * speed * speed;
-    PVector dragForce = m.vel.copy();
+    dragForce = m.vel.copy();
     dragForce.mult(-1);
     dragForce.normalize();
     dragForce.mult(dragMagnitude);
     return dragForce;
   }
   
+  PVector dragBellow() {
+    dragForceBellow = dragForce.copy();
+    dragForceBellow.rotate(QUARTER_PI);
+    dragForceBellow.mult(2);
+    return dragForceBellow;
+  }
+  
   void display() {
+    println("bellow = " + dragForceBellow);
     noStroke();
     fill(175,20);
     rectMode(CORNER);
