@@ -70,10 +70,10 @@ class Clubber {
     }
 
     if (location.x < height/2) {
-      applyForce(windSN);
+     applyForce(windSN);
     } else if (location.x > height/2) {
-      PVector windNS = PVector.mult(windSN, -1);
-      applyForce(windNS);
+     PVector windNS = PVector.mult(windSN, -1);
+     applyForce(windNS);
     }
 
     //BOUNCES ON THE EDGES
