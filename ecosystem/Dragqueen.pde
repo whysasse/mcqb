@@ -4,7 +4,7 @@ MCQB Ecosystem
  
  Creates a circle that giggles around, surrounded by a swarm of glitter. 
  
- Authors: Ennio Franco and Fabio Sasseron
+ Authors: Fabio Sasseron
  https://github.com/whysasse/mcqb
  */
 

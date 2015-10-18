@@ -4,7 +4,7 @@ MCQB Ecosystem
  
  Creates a little transparent circle that is drawn to a given location
  
- Authors: Ennio Franco and Fabio Sasseron
+ Authors: Fabio Sasseron
  https://github.com/whysasse/mcqb
  */
  

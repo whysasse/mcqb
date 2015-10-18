@@ -2,34 +2,28 @@
 MCQB Ecosystem
  Based on the book Nature of Code, by Daniel Shiffman
  
- Creates a square that enters the screen from the bottom and dances around 
+ Creates objects that avoid the edges
  
- Authors: Ennio Franco and Fabio Sasseron
+ Authors: Fabio Sasseron
  https://github.com/whysasse/mcqb
  */
-
+ 
 class Clubber {
 
-  PVector location;
-  PVector velocity;
-  PVector acceleration;
-  float mass;  
-  float alpha;
-  PVector screen;
-
-  PVector windWE;
-  PVector windSN;
+  PVector location, velocity, acceleration, screen;
+  //PVector windWE, windSN;
+  float mass, alpha, x, y, n;
 
   Clubber(float m, float x, float y) {
     mass = m;
     location = new PVector(x, y);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0); 
-    screen = new PVector(width, height);
     alpha = 180;
 
-    windWE = new PVector(random(-0.1, -0.01), 0); //works on Y axis
-    windSN = new PVector(0, random(-0.1, -0.01)); //works on X axis
+    //screen = new PVector(width, height);
+    //windWE = new PVector(random(-0.1, -0.01), 0); //works on Y axis
+    //windSN = new PVector(0, random(-0.1, -0.01)); //works on X axis
   }
 
   void applyForce(PVector force) {
@@ -47,8 +41,7 @@ class Clubber {
     noStroke();
     fill(5, 186, 255, alpha);
     rectMode(CENTER);
-    rect(location.x, location.y, mass*8, mass*8);
-    //ellipse(location.x, location.y, mass*8, mass*8);
+    rect(location.x, location.y, mass*8, mass*8, 4);
     if (alpha < 180) {
       alpha++;
     }
@@ -58,39 +51,38 @@ class Clubber {
     alpha = 0;
   }
 
-
-  void checkEdges() {
-
-    //SPREADS FROM THE DOOR
-    if (location.y < width/2) {
-      applyForce(windWE);
-    } else if (location.y > width/2) {
-      PVector windEW = PVector.mult(windWE, -1);
-      applyForce(windEW);
-    }
-
-    if (location.x < height/2) {
-     applyForce(windSN);
-    } else if (location.x > height/2) {
-     PVector windNS = PVector.mult(windSN, -1);
-     applyForce(windNS);
-    }
-
-    //BOUNCES ON THE EDGES
-    if (location.x > width) {
-      location.x = width;
-      velocity.x *= -1;
-    } else if (location.x < 0) {
-      velocity.x *= -1;
-      location.x = 0;
-    }
-
-    if (location.y > height) {
-      location.y = height;
-      velocity.y *= -1;
-    } else if (location.y < 0) {
-      velocity.y *= -1;
-      location.y = 0;
-    }
+  float calcWindX(float _x) {
+    x = _x;
+    n = 0;
+    n = map(x, 0, width, 0.1, -0.1);
+    return n;
   }
+
+  float calcWindY(float _y) {
+    y = _y;
+    n = 0;
+    n = map(y, 0, height, 0.1, -0.1);
+    return n;
+  }
+
+  //NOT USED, THE OBJECTS NEVER TOUCH THE EDGES! 
+  //void checkEdges() {
+
+  //  //BOUNCES ON THE EDGES
+  //  if (location.x > width) {
+  //    location.x = width;
+  //    velocity.x *= -1;
+  //  } else if (location.x < 0) {
+  //    velocity.x *= -1;
+  //    location.x = 0;
+  //  }
+
+  //  if (location.y > height) {
+  //    location.y = height;
+  //    velocity.y *= -1;
+  //  } else if (location.y < 0) {
+  //    velocity.y *= -1;
+  //    location.y = 0;
+  //  }
+  //}
 }

@@ -18,7 +18,8 @@ void setup() {
   ennio = new Ennio();
   sheyla = new Dragqueen();
   for (int i = 0; i < clubbers.length; i++) {
-    clubbers[i] = new Clubber(random(1, 3), 0, height);
+    //clubbers[i] = new Clubber(random(1, 3), 0, height);
+    clubbers[i] = new Clubber(random(1, 4), random(0, width), random(0, height));
   }
 
   isAttacking = 0; //used by the Glitter object
@@ -36,18 +37,18 @@ void draw() {
   sheyla.display();
 
   //Clubbers
-  for (int i = 0; i < clubbers.length; i++) {
+  for (Clubber c : clubbers) {
+    //DO NOT APPLY GRAVITY OR WIND!
+    //THE FORCES AROUND THE EDGES ARE ENOUGH!!!
+    PVector force = new PVector(c.calcWindX(c.location.x), c.calcWindY(c.location.y));
+    c.applyForce(force);
 
-    //PVector wind = new PVector(random(-0.01, 0.02), 0); //works on Y axis
-    //clubbers[i].applyForce(wind);
-
-    //PVector will = new PVector(0, random(-0.1, -0.2)); //works on X axis
-    //clubbers[i].applyForce(will);
-
-    clubbers[i].update();
-    clubbers[i].display();
-    clubbers[i].checkEdges();
+    c.update();
+    c.display();
+    //NO NEED TO CHECK THE EDGES, THE OBJECTS ARE NEVER GOING TO TOUCH THEM
+    //c.checkEdges();
   }
+
 }
 
 void mousePressed() {
