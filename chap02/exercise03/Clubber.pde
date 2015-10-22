@@ -52,14 +52,14 @@ class Clubber {
   float calcWindX(float _x) {
     x = _x;
     n = 0;
-    n = map(x, 0, width, 0.1, -0.1);
+    n = map(x, 0, width, 0.2, -0.2);
     return n;
   }
 
   float calcWindY(float _y) {
     y = _y;
     n = 0;
-    n = map(y, 0, height, 0.1, -0.1);
+    n = map(y, 0, height, 0.2, -0.2);
     return n;
   }
 

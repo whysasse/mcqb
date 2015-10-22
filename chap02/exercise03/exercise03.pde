@@ -13,7 +13,7 @@ void setup() {
   size(720, 480);
   smooth();
   for (int i = 0; i < clubbers.length; i++) {
-    clubbers[i] = new Clubber(random(1, 4), random(0, width), random(0, height));
+    clubbers[i] = new Clubber(random(1, 3), random(0, width), random(0, height));
   }
 }
 
